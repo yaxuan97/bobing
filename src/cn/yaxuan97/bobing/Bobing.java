@@ -1,6 +1,6 @@
 /**
- * Õâ¸öÀàÊÇÄ£Äâ½á¹ûµÄÊµÌåÀà
- * Ê¹ÓÃ¹¹Ôì·½·¨ÊµÀı»¯Ò»¸öBobing¶ÔÏó
+ * è¿™ä¸ªç±»æ˜¯æ¨¡æ‹Ÿç»“æœçš„å®ä½“ç±»
+ * ä½¿ç”¨æ„é€ æ–¹æ³•å®ä¾‹åŒ–ä¸€ä¸ªBobingå¯¹è±¡
  */
 package cn.yaxuan97.bobing;
 
@@ -20,131 +20,131 @@ public class Bobing implements Serializable {
 	 */
 	private static final long serialVersionUID = 8991522951957235267L;
 
-	private final Random rand; // Ëæ»úÊı
+	private final Random rand; // éšæœºæ•°
 
-	private int[] result; // Ä£Äâ½á¹û
-	String s; // Ä£Äâ½á¹ûÎÄ×Ö
+	private int[] result; // æ¨¡æ‹Ÿç»“æœ
+	String s; // æ¨¡æ‹Ÿç»“æœæ–‡å­—
 	private int[] analyzed;
 
 	/**
-	 * Bobing() ¹¹Ôì·½·¨²»ĞèÒªÈÎºÎ²ÎÊı¡£µ÷ÓÃ¹¹Ôì·½·¨ºó£¬½«»áËæ»úÉú³ÉÒ»´Î½á¹û¡£È»ºóµ÷ÓÃÆäËû·½·¨»ñÈ¡½á¹û¡£
+	 * Bobing() æ„é€ æ–¹æ³•ä¸éœ€è¦ä»»ä½•å‚æ•°ã€‚è°ƒç”¨æ„é€ æ–¹æ³•åï¼Œå°†ä¼šéšæœºç”Ÿæˆä¸€æ¬¡ç»“æœã€‚ç„¶åè°ƒç”¨å…¶ä»–æ–¹æ³•è·å–ç»“æœã€‚
 	 */
 	public Bobing() {
-		rand = new Random(); // ÊµÀı»¯Ëæ»úÊı¶ÔÏó
-		result = new int[6]; // ³õÊ¼»¯Ä£Äâ½á¹û¶ÔÏó
-		for (int i = 0; i < result.length; i++) { // ÀûÓÃËæ»úÊı£¬»ñµÃÒ»´ÎÄ£Äâ½á¹û
-			result[i] = rand.nextInt(6) + 1; // ¶ÔÃ¿¸öÊı×é³ÉÔ±¸³Öµ
-		} // Ä£Äâ½á¹û´´½¨Íê³É
+		rand = new Random(); // å®ä¾‹åŒ–éšæœºæ•°å¯¹è±¡
+		result = new int[6]; // åˆå§‹åŒ–æ¨¡æ‹Ÿç»“æœå¯¹è±¡
+		for (int i = 0; i < result.length; i++) { // åˆ©ç”¨éšæœºæ•°ï¼Œè·å¾—ä¸€æ¬¡æ¨¡æ‹Ÿç»“æœ
+			result[i] = rand.nextInt(6) + 1; // å¯¹æ¯ä¸ªæ•°ç»„æˆå‘˜èµ‹å€¼
+		} // æ¨¡æ‹Ÿç»“æœåˆ›å»ºå®Œæˆ
 	}
 
 	/**
-	 * analyze()·½·¨ÓÃÀ´¶ÔÄ£Äâ½á¹û½øĞĞ·ÖÎö£¬½«Ä£Äâ½á¹û×ª»»³É·ÖÎöºóµÄÄ£Äâ½á¹û
+	 * analyze()æ–¹æ³•ç”¨æ¥å¯¹æ¨¡æ‹Ÿç»“æœè¿›è¡Œåˆ†æï¼Œå°†æ¨¡æ‹Ÿç»“æœè½¬æ¢æˆåˆ†æåçš„æ¨¡æ‹Ÿç»“æœ
 	 * 
 	 * @throws ResultHasBeenAnalyzedExciption
 	 */
 	public void analyze() throws ResultHasBeenAnalyzedExciption {
 		if (analyzed != null) {
-			throw new ResultHasBeenAnalyzedExciption("Ä£Äâ½á¹ûÒÑ¾­±»·ÖÎö¹ıÁË£¡ ");
+			throw new ResultHasBeenAnalyzedExciption("æ¨¡æ‹Ÿç»“æœå·²ç»è¢«åˆ†æè¿‡äº†ï¼ ");
 		}
-		analyzed = new int[6]; // ³õÊ¼»¯·ÖÎö½á¹û¶ÔÏó
-		for (int i : result) { // ±éÀúÄ£Äâ½á¹ûÊı×é
-			analyzed[i - 1]++; // ¶ÔÄ£Äâ½á¹ûÖĞ³öÏÖµÄ¸÷ÖÖµãÊı½øĞĞÍ³¼Æ
-		} // ·ÖÎöÍê³É
+		analyzed = new int[6]; // åˆå§‹åŒ–åˆ†æç»“æœå¯¹è±¡
+		for (int i : result) { // éå†æ¨¡æ‹Ÿç»“æœæ•°ç»„
+			analyzed[i - 1]++; // å¯¹æ¨¡æ‹Ÿç»“æœä¸­å‡ºç°çš„å„ç§ç‚¹æ•°è¿›è¡Œç»Ÿè®¡
+		} // åˆ†æå®Œæˆ
 	}
 	
 	/**
-	 * calc()·½·¨ÓÃÀ´¶Ô·ÖÎöºóµÄ½á¹û½øĞĞ¼ÆËã£¬µÃµ½×îÖÕ½á¹û
+	 * calc()æ–¹æ³•ç”¨æ¥å¯¹åˆ†æåçš„ç»“æœè¿›è¡Œè®¡ç®—ï¼Œå¾—åˆ°æœ€ç»ˆç»“æœ
 	 * 
 	 * @throws ResultHasBeenCalculatedExciption
 	 */
 	public void calc() throws ResultHasBeenCalculatedExciption {
 		if (s != null) {
-			throw new ResultHasBeenCalculatedExciption("±¾´ÎÄ£ÄâÒÑ¾­µÃµ½×îÖÕ½á¹ûÁË£¡");
+			throw new ResultHasBeenCalculatedExciption("æœ¬æ¬¡æ¨¡æ‹Ÿå·²ç»å¾—åˆ°æœ€ç»ˆç»“æœäº†ï¼");
 		}
-		if(analyzed[3] == 4 && analyzed[0] == 2) { // ·ÖÎö¿ªÊ¼
-			s = new String("²å½ğ»¨");
+		if(analyzed[3] == 4 && analyzed[0] == 2) { // åˆ†æå¼€å§‹
+			s = new String("æ’é‡‘èŠ±");
 			return;
 		}
 		if (analyzed[3] == 6) {
-			s = new String("ºìÁù²ª");
+			s = new String("çº¢å…­å‹ƒ");
 			return;
 		}
 		if (analyzed[0] == 6) {
-			s = new String("±éµØ½õ");
+			s = new String("éåœ°é”¦");
 			return;
 		}
 		if (analyzed[3] == 5) {
-			s = new String("Îåºì");
+			s = new String("äº”çº¢");
 			return;
 		}
 		if (analyzed[3] == 4) {
-			s = new String("ËÄºì");
+			s = new String("å››çº¢");
 			return;
 		}
 		if (analyzed[3] == 3) {
-			s = new String("Èıºì");
+			s = new String("ä¸‰çº¢");
 			return;
 		}
 		for (int i : analyzed) {
 			if (i == 6) {
-				s = new String("ºÚÁù²ª");
+				s = new String("é»‘å…­å‹ƒ");
 				return;
 			}
 			if (i == 5) {
 				if (analyzed[3] == 1) {
-					s = new String("Îå×ÓµÇ¿Æ + Ò»Ğã");
+					s = new String("äº”å­ç™»ç§‘ + ä¸€ç§€");
 				} else {
-					s = new String("Îå×ÓµÇ¿Æ");
+					s = new String("äº”å­ç™»ç§‘");
 				}
 				return;
 			}
 			if (i == 4) {
 				switch (analyzed[3]) {
 				case 1:
-					s = new String("ËÄ½ø + Ò»Ğã");
+					s = new String("å››è¿› + ä¸€ç§€");
 					break;
 				case 2:
-					s = new String("ËÄ½ø + ¶ş¾Ù");
+					s = new String("å››è¿› + äºŒä¸¾");
 					break;
 				case 0:
-					s = new String("ËÄ½ø");
+					s = new String("å››è¿›");
 				default:
 					break;
 				}
 				return;
 			}
 			if(analyzed[3] == 2) {
-				s = new String("¶ş¾Ù");
+				s = new String("äºŒä¸¾");
 				return;
 			}
 			if(analyzed[3] == 1) {
 				if (analyzed[0] == 1 && analyzed[1] == 1 &&analyzed[2] == 1 &&analyzed[4] == 1) {
-					s = new String("¶ÔÌÃ");
+					s = new String("å¯¹å ‚");
 				} else {
-					s = new String("Ò»Ğã");
+					s = new String("ä¸€ç§€");
 				}
 				return;
 			}
-			s = new String("°²Î¿½±");
-		} // ·ÖÎö½áÊø
+			s = new String("å®‰æ…°å¥–");
+		} // åˆ†æç»“æŸ
 	}
 	
 	/**
-	 * getCalc()·½·¨ÓÃÀ´µÃµ½×îÖÕµÄ½á¹û
+	 * getCalc()æ–¹æ³•ç”¨æ¥å¾—åˆ°æœ€ç»ˆçš„ç»“æœ
 	 * */
 	public String getCalc() {
 		return s;
 	}
 	
 	/**
-	 * getResult()·½·¨ÓÃÀ´»ñÈ¡ËùÓĞ÷»×ÓµÄ×´Ì¬
+	 * getResult()æ–¹æ³•ç”¨æ¥è·å–æ‰€æœ‰éª°å­çš„çŠ¶æ€
 	 * */
 	public int[] getResult() {
 		return result;
 	}
 	
 	/**
-	 * getAnalyze()·½·¨ÓÃÁËÀ´»ñÈ¡·ÖÎö½á¹û
+	 * getAnalyze()æ–¹æ³•ç”¨äº†æ¥è·å–åˆ†æç»“æœ
 	 * */
 	public int[] getAnalyze() {
 		return analyzed;

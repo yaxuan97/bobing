@@ -1,5 +1,5 @@
 /**
- * 此异常用来标识：尝试分析一个已经分析过的Bobing对象
+ * 姝ゅ紓甯哥敤鏉ユ爣璇嗭細灏濊瘯鍒嗘瀽涓�涓凡缁忓垎鏋愯繃鐨凚obing瀵硅薄
  */
 package cn.yaxuan97.bobing.exception;
 

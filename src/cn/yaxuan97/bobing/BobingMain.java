@@ -1,5 +1,5 @@
 /**
- * ´ËÀàÊÇÕû¸ö³ÌĞòµÄ¿ÉÔËĞĞÀà
+ * æ­¤ç±»æ˜¯æ•´ä¸ªç¨‹åºçš„å¯è¿è¡Œç±»
  */
 package cn.yaxuan97.bobing;
 
@@ -43,22 +43,22 @@ public class BobingMain {
 			dir.mkdir();
 		}
 		logs = new File("logs/simc" + time + ".log");
-		answer.put("²å½ğ»¨", 0);
-		answer.put("ºìÁù²ª", 0);
-		answer.put("±éµØ½õ", 0);
-		answer.put("Îåºì", 0);
-		answer.put("ËÄºì", 0);
-		answer.put("Èıºì", 0);
-		answer.put("ºÚÁù²ª", 0);
-		answer.put("Îå×ÓµÇ¿Æ + Ò»Ğã", 0);
-		answer.put("Îå×ÓµÇ¿Æ", 0);
-		answer.put("ËÄ½ø + Ò»Ğã", 0);
-		answer.put("ËÄ½ø + ¶ş¾Ù", 0);
-		answer.put("ËÄ½ø", 0);
-		answer.put("¶ÔÌÃ", 0);
-		answer.put("¶ş¾Ù", 0);
-		answer.put("Ò»Ğã", 0);
-		answer.put("°²Î¿½±", 0);
+		answer.put("æ’é‡‘èŠ±", 0);
+		answer.put("çº¢å…­å‹ƒ", 0);
+		answer.put("éåœ°é”¦", 0);
+		answer.put("äº”çº¢", 0);
+		answer.put("å››çº¢", 0);
+		answer.put("ä¸‰çº¢", 0);
+		answer.put("é»‘å…­å‹ƒ", 0);
+		answer.put("äº”å­ç™»ç§‘ + ä¸€ç§€", 0);
+		answer.put("äº”å­ç™»ç§‘", 0);
+		answer.put("å››è¿› + ä¸€ç§€", 0);
+		answer.put("å››è¿› + äºŒä¸¾", 0);
+		answer.put("å››è¿›", 0);
+		answer.put("å¯¹å ‚", 0);
+		answer.put("äºŒä¸¾", 0);
+		answer.put("ä¸€ç§€", 0);
+		answer.put("å®‰æ…°å¥–", 0);
 		try {
 			FileOutputStream output = new FileOutputStream(logs, true);
 			Writer out = new OutputStreamWriter(output);
@@ -86,26 +86,26 @@ public class BobingMain {
 				answer.replace(s, answer.get(s) + 1);
 			}
 			out.close();
-			System.out.println("²å½ğ»¨----------------" + ":" + answer.get("²å½ğ»¨"));
-			System.out.println("ºìÁù²ª----------------" + ":" + answer.get("ºìÁù²ª"));
-			System.out.println("±éµØ½õ----------------" + ":" + answer.get("±éµØ½õ"));
-			System.out.println("ºÚÁù²ª----------------" + ":" + answer.get("ºÚÁù²ª"));
-			System.out.println("Îåºì-------------------" + ":" + answer.get("Îåºì"));
-			System.out.println("Îå×ÓµÇ¿Æ + Ò»Ğã----" + ":" + answer.get("Îå×ÓµÇ¿Æ + Ò»Ğã"));
-			System.out.println("Îå×ÓµÇ¿Æ-------------" + ":" + answer.get("Îå×ÓµÇ¿Æ"));
-			System.out.println("ËÄºì-------------------" + ":" + answer.get("ËÄºì"));
-			System.out.println("¶ÔÌÃ-------------------" + ":" + answer.get("¶ÔÌÃ"));
-			System.out.println("Èıºì-------------------" + ":" + answer.get("Èıºì"));
-			System.out.println("ËÄ½ø + ¶ş¾Ù----------" + ":" + answer.get("ËÄ½ø + ¶ş¾Ù"));
-			System.out.println("ËÄ½ø + Ò»Ğã----------" + ":" + answer.get("ËÄ½ø + Ò»Ğã"));
-			System.out.println("¶ş¾Ù-------------------" + ":" + answer.get("¶ş¾Ù"));
-			System.out.println("Ò»Ğã-------------------" + ":" + answer.get("Ò»Ğã"));
-			System.out.println("°²Î¿½±----------------" + ":" + answer.get("°²Î¿½±"));
+			System.out.println("æ’é‡‘èŠ±----------------" + ":" + answer.get("æ’é‡‘èŠ±"));
+			System.out.println("çº¢å…­å‹ƒ----------------" + ":" + answer.get("çº¢å…­å‹ƒ"));
+			System.out.println("éåœ°é”¦----------------" + ":" + answer.get("éåœ°é”¦"));
+			System.out.println("é»‘å…­å‹ƒ----------------" + ":" + answer.get("é»‘å…­å‹ƒ"));
+			System.out.println("äº”çº¢-------------------" + ":" + answer.get("äº”çº¢"));
+			System.out.println("äº”å­ç™»ç§‘ + ä¸€ç§€----" + ":" + answer.get("äº”å­ç™»ç§‘ + ä¸€ç§€"));
+			System.out.println("äº”å­ç™»ç§‘-------------" + ":" + answer.get("äº”å­ç™»ç§‘"));
+			System.out.println("å››çº¢-------------------" + ":" + answer.get("å››çº¢"));
+			System.out.println("å¯¹å ‚-------------------" + ":" + answer.get("å¯¹å ‚"));
+			System.out.println("ä¸‰çº¢-------------------" + ":" + answer.get("ä¸‰çº¢"));
+			System.out.println("å››è¿› + äºŒä¸¾----------" + ":" + answer.get("å››è¿› + äºŒä¸¾"));
+			System.out.println("å››è¿› + ä¸€ç§€----------" + ":" + answer.get("å››è¿› + ä¸€ç§€"));
+			System.out.println("äºŒä¸¾-------------------" + ":" + answer.get("äºŒä¸¾"));
+			System.out.println("ä¸€ç§€-------------------" + ":" + answer.get("ä¸€ç§€"));
+			System.out.println("å®‰æ…°å¥–----------------" + ":" + answer.get("å®‰æ…°å¥–"));
 		} catch (FileNotFoundException e) {
-			// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+			// TODO è‡ªåŠ¨ç”Ÿæˆçš„ catch å—
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+			// TODO è‡ªåŠ¨ç”Ÿæˆçš„ catch å—
 			e.printStackTrace();
 		}
 
